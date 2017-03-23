@@ -9,7 +9,7 @@ from PIL import Image
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 
-# For face recognition we will the the LBPH Face Recognizer 
+# For face recognition we will use the the LBPH Face Recognizer
 recognizer = cv2.createLBPHFaceRecognizer()
 
 def get_images_and_labels(path):
@@ -42,7 +42,7 @@ def get_images_and_labels(path):
 
 # Path to the UPES Dataset
 path = './data'
-# Call the get_images_and_labels function and get the face images and the 
+# Call the get_images_and_labels function and get the face images and the
 # corresponding labels
 images, labels = get_images_and_labels(path)
 cv2.destroyAllWindows()
