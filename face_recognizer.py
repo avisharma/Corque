@@ -4,6 +4,16 @@
 import cv2, os
 import numpy as np
 from PIL import Image
+import urllib2
+
+## Enable proxy to work on UPESNET to fetch DB/Mark attendance, change username and pass accordingly
+proxy = urllib2.ProxyHandler({'http': 'http://500041199:Gmail&#64;@proxy.ddn.upes.ac.in:8080'})
+auth = urllib2.HTTPBasicAuthHandler()
+opener = urllib2.build_opener(proxy, auth, urllib2.HTTPHandler)
+urllib2.install_opener(opener)
+## Test proxy connection
+conn = urllib2.urlopen('http://upes.ac.in')
+return_str = conn.read()
 
 # For face detection we will use the Haar Cascade provided by OpenCV.
 cascadePath = "haarcascade_frontalface_default.xml"
